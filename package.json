@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev:frontend": "nx run frontend:dev",
+    "dev:frontend": "nx run apps/frontend:dev",
     "dev:backend": "nx run backend:dev",
     "dev:mobile": "nx run mobile:start",
     "build": "nx run-many --target=build --all"
