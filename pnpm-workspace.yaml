@@ -1,0 +1,12 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# Detta krävs för att React Native (Expo + Metro) ska hitta rätt beroenden
+public-hoist-pattern:
+  - react
+  - react-native
+  - react-native/*
+  - "@react-native/*"
+  - expo
+  - expo/*
