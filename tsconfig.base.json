@@ -10,10 +10,7 @@
     "paths": {
       "@chatt/types": ["packages/shared/types/src/index.ts"],
       "@chatt/ui": ["packages/shared/ui/src/index.ts"],
-      "@chatt/utils": ["packages/shared/utils/src/index.ts"],
-      "@shared-types": ["packages/shared/types/index.ts"],
-      "@shared-ui": ["packages/shared/ui/index.ts"],
-      "@shared-utils": ["packages/shared/utils/index.ts"]
+      "@chatt/utils": ["packages/shared/utils/src/index.ts"]
     }
   }
 }
