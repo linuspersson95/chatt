@@ -1,10 +1,10 @@
 export default {
-  displayName: 'utils',
-  preset: '../../../jest.preset.js',
+  displayName: '@chatt/ui',
+  preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/packages/shared/utils',
+  coverageDirectory: '../../coverage/packages/ui',
 };

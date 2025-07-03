@@ -8,9 +8,11 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@chatt/types": ["packages/shared/types/src/index.ts"],
-      "@chatt/ui": ["packages/shared/ui/src/index.ts"],
-      "@chatt/utils": ["packages/shared/utils/src/index.ts"]
+      "@chatt/types": ["packages/types/src/index.ts"],
+      "@chatt/ui": ["packages/ui/src/index.ts"],
+      "@chatt/utils": ["packages/utils/src/index.ts"],
+      "@chatt/config": ["packages/config/src/index.ts"],
+      "@chatt/config/*": ["packages/config/src/*"]
     }
   }
 }

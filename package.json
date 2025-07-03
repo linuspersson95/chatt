@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev:frontend": "nx run apps/frontend:dev",
-    "dev:backend": "nx run backend:dev",
-    "dev:mobile": "nx run mobile:start",
+    "dev:backend": "nx run apps/backend:dev",
+    "dev:mobile": "nx run apps/mobile:start",
     "build": "nx run-many --target=build --all"
   },
   "private": true,
@@ -70,7 +70,8 @@
     "vitest": "^3.2.4"
   },
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "dependencies": {
     "@expo/metro-config": "~0.19.12",

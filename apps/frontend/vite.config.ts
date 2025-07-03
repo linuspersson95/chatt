@@ -16,7 +16,16 @@ export default defineConfig(() => ({
     port: 3001,
     host: 'localhost',
   },
-  plugins: [react(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
+  plugins: [
+    react(),
+    nxViteTsPaths(),
+    nxCopyAssetsPlugin(['*.md']),
+    tamaguiPlugin({
+      config: '@chatt/config',
+      components: ['@tamagui/core'],
+      optimize: true,
+    }),
+  ],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
