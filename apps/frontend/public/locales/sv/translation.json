@@ -1,4 +1,5 @@
 {
   "welcome": "Hej och välkommen till frontend",
-  "btnText": "Här är en text"
+  "login": "Logga in",
+  "createAccount": "Skapa konto"
 }

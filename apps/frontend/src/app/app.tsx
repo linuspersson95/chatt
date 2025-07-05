@@ -1,5 +1,4 @@
-import { Button } from '@chatt/ui';
-import { H1, View } from 'tamagui';
+import { H1, View, XGroup, YStack, Button } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 
 export function App() {
@@ -7,7 +6,16 @@ export function App() {
   return (
     <View p={10}>
       <H1>{t('welcome')}</H1>
-      <Button text={t('btnText')} />
+      <YStack alignItems="center">
+        <XGroup p={10}>
+          <XGroup.Item>
+            <Button theme="green">{t('login')}</Button>
+          </XGroup.Item>
+          <XGroup.Item>
+            <Button theme="blue">{t('createAccount')}</Button>
+          </XGroup.Item>
+        </XGroup>
+      </YStack>
     </View>
   );
 }

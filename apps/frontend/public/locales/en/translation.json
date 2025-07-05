@@ -1,4 +1,5 @@
 {
   "welcome": "Hello and welcome to frontend",
-  "btnText": "Here is an text"
+  "login": "Login",
+  "createAccount": "Create account"
 }
