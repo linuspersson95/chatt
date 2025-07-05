@@ -75707,6 +75707,13 @@
           "name": "c-space--20",
           "val": -186,
           "variable": "var(--c-space--20)"
+        },
+        "sm": {
+          "isVar": true,
+          "key": "$sm",
+          "name": "c-space-sm",
+          "val": 4,
+          "variable": "var(--c-space-sm)"
         }
       },
       "size": {
@@ -76548,6 +76555,13 @@
         "name": "c-space--20",
         "val": -186,
         "variable": "var(--c-space--20)"
+      },
+      "$space.sm": {
+        "isVar": true,
+        "key": "$sm",
+        "name": "c-space-sm",
+        "val": 4,
+        "variable": "var(--c-space-sm)"
       },
       "$size.0": {
         "isVar": true,

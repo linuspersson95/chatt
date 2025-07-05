@@ -1,11 +1,13 @@
 import { Button } from '@chatt/ui';
 import { H1, View } from 'tamagui';
+import { useTranslation } from 'react-i18next';
 
 export function App() {
+  const { t } = useTranslation();
   return (
-    <View>
-      <H1>Välkommen till frontend</H1>
-      <Button text="Här är en text" />
+    <View p={10}>
+      <H1>{t('welcome')}</H1>
+      <Button text={t('btnText')} />
     </View>
   );
 }
