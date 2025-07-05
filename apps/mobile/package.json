@@ -8,10 +8,10 @@
   "dependencies": {
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
+    "expo": "*",
     "metro-config": "*",
     "react-native": "*",
-    "expo": "*",
-    "react-native-svg": "*",
+    "react-native-svg": "^15.8.0",
     "react-native-web": "*"
   }
 }

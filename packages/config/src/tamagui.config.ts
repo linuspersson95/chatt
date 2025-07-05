@@ -1,15 +1,19 @@
 import { defaultConfig } from '@tamagui/config/v4';
-import { createTamagui } from '@tamagui/core';
+import { createTamagui, type CreateTamaguiConfig } from 'tamagui';
 
 export const config = createTamagui({
   ...defaultConfig,
-  media: {
-    ...defaultConfig.media,
+  tokens: {
+    ...defaultConfig.tokens,
+    space: {
+      ...defaultConfig.tokens.space,
+      sm: 4,
+    },
   },
 });
 
 type OurConfig = typeof config;
 
-declare module '@tamagui/core' {
+declare module 'tamagui' {
   interface TamaguiCustomConfig extends OurConfig {}
 }

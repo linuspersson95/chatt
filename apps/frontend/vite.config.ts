@@ -21,8 +21,8 @@ export default defineConfig(() => ({
     nxViteTsPaths(),
     nxCopyAssetsPlugin(['*.md']),
     tamaguiPlugin({
-      config: '@chatt/config',
-      components: ['@tamagui/core'],
+      config: '@chatt/config/src/tamagui.config.ts',
+      components: ['tamagui'],
       optimize: true,
     }),
   ],

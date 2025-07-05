@@ -1,4 +1,5 @@
 {
   "nxConsole.generateAiAgentRules": true,
-  "cSpell.words": ["tamagui"]
+  "cSpell.words": ["tamagui"],
+  "github.copilot.enable": false
 }

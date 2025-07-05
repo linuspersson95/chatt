@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { TamaguiProvider } from '@tamagui/core';
+import { TamaguiProvider } from 'tamagui';
 import { config } from '@chatt/config';
 import App from './app/app';
 

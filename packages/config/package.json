@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tamagui/config": "^1.129.14",
-    "@tamagui/core": "^1.129.14"
+    "@tamagui/config": "^1.129.14"
   }
 }

@@ -8,8 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@tamagui/ui": "^1.93.1"
-  }
+  "license": "ISC"
 }

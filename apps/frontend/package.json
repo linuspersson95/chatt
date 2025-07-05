@@ -12,6 +12,8 @@
   "type": "module",
   "dependencies": {
     "@chatt/config": "workspace:^",
-    "@chatt/ui": "workspace:^"
+    "@chatt/ui": "workspace:^",
+    "@tamagui/vite-plugin": "^1.129.14",
+    "react-i18next": "^15.6.0"
   }
 }
