@@ -26,10 +26,6 @@ export default defineConfig(() => ({
       optimize: true,
     }),
   ],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   build: {
     outDir: '../../dist/frontend',
     emptyOutDir: true,
