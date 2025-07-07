@@ -15,6 +15,7 @@ import {
   Unspaced,
 } from 'tamagui';
 import { useTranslation } from 'react-i18next';
+import { useAuthStore } from '@chatt/state';
 
 type Props = {
   open: boolean;
@@ -24,6 +25,7 @@ type Props = {
 export default function LoginSheet({ open, onClose }: Props) {
   const { t } = useTranslation();
   const media = useMedia();
+  const setUser = useAuthStore((state) => state.login);
 
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -34,6 +36,7 @@ export default function LoginSheet({ open, onClose }: Props) {
 
     setTimeout(() => {
       setIsLoading(false);
+      setUser(username);
       onClose();
     }, 1000);
   }, [isLoading]);

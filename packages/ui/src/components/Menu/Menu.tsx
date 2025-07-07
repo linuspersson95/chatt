@@ -10,6 +10,7 @@ import {
   YStack,
   styled,
 } from 'tamagui';
+import { useAuthStore } from '@chatt/state';
 
 const AnimatedYStack = styled(YStack, {
   flex: 1,
@@ -20,7 +21,7 @@ const AnimatedYStack = styled(YStack, {
   variants: {
     // 1 = right, 0 = nowhere, -1 = left
     direction: {
-      ':number': (direction) => ({
+      ':number': (direction: number) => ({
         enterStyle: {
           x: direction > 0 ? -25 : 25,
           opacity: 0,
@@ -61,6 +62,7 @@ const TabsRovingIndicator = ({
 };
 
 export default function Menu() {
+  const logOut = useAuthStore((state) => state.logout);
   const [tabState, setTabState] = useState<{
     currentTab: string;
     /**
@@ -98,7 +100,7 @@ export default function Menu() {
     return activeAt.x > prevActiveAt.x ? -1 : 1;
   })();
 
-  const handleOnInteraction: TabsTabProps['onInteraction'] = (type, layout) => {
+  const handleOnInteraction: TabsTabProps['onInteraction'] = (type: string, layout: TabLayout | null) => {
     if (type === 'select') {
       setActiveIndicator(layout);
     } else {
@@ -190,7 +192,7 @@ export default function Menu() {
             flex={1}
             justifyContent="center"
           >
-            <H5 textAlign="center">{currentTab}</H5>
+            <Button onPress={logOut}>Logga ut</Button>
           </Tabs.Content>
         </AnimatedYStack>
       </AnimatePresence>

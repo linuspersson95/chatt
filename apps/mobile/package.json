@@ -6,12 +6,12 @@
     "eas-build-post-install": "cd ../../ && node tools/scripts/eas-build-post-install.mjs . apps/mobile"
   },
   "dependencies": {
-    "@testing-library/jest-native": "*",
-    "@testing-library/react-native": "*",
-    "expo": "*",
-    "metro-config": "*",
-    "react-native": "*",
-    "react-native-svg": "^15.8.0",
-    "react-native-web": "*"
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^13.2.0",
+    "expo": "^53.0.18",
+    "metro-config": "^0.82.5",
+    "react-native": "^0.80.1",
+    "react-native-svg": "^15.12.0",
+    "react-native-web": "^0.20.0"
   }
 }

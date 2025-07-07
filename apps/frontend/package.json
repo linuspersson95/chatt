@@ -12,8 +12,9 @@
   "type": "module",
   "dependencies": {
     "@chatt/config": "workspace:^",
+    "@chatt/state": "workspace:*",
     "@chatt/translation": "workspace:*",
     "@chatt/ui": "workspace:^",
-    "@tamagui/vite-plugin": "^1.129.14"
+    "@tamagui/vite-plugin": "^1.130.8"
   }
 }

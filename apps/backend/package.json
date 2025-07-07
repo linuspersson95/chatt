@@ -1,5 +1,5 @@
 {
-  "name": "@chatt/ui",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@chatt/state": "workspace:*"
-  }
+  "packageManager": "pnpm@10.12.4"
 }

@@ -10,6 +10,7 @@
     "paths": {
       "@chatt/config": ["packages/config/src/index.ts"],
       "@chatt/config/*": ["packages/config/src/*"],
+      "@chatt/state": ["packages/state/src/index.ts"],
       "@chatt/translation": ["packages/translation/src/index.ts"],
       "@chatt/types": ["packages/types/src/index.ts"],
       "@chatt/ui": ["packages/ui/src/index.ts"],
