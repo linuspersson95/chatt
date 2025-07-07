@@ -85,6 +85,7 @@
     "express": "^4.21.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-i18next": "^15.6.0",
     "react-native": "0.76.3",
     "react-native-svg": "~15.8.0",
     "react-native-svg-transformer": "~1.5.1",

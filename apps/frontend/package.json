@@ -14,10 +14,6 @@
     "@chatt/config": "workspace:^",
     "@chatt/translation": "workspace:*",
     "@chatt/ui": "workspace:^",
-    "@tamagui/vite-plugin": "^1.129.14",
-    "i18next": "^25.3.1",
-    "i18next-browser-languagedetector": "^8.2.0",
-    "i18next-http-backend": "^3.0.2",
-    "react-i18next": "^15.6.0"
+    "@tamagui/vite-plugin": "^1.129.14"
   }
 }
