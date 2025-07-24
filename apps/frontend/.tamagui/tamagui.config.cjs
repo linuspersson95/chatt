@@ -1708,7 +1708,7 @@ var defaultConfig = {
   settings
 };
 
-// ../../node_modules/.pnpm/tamagui@1.130.8_react-dom@1_c17b3e5e0ca22852e479e54fcdf90c3d/node_modules/tamagui/dist/esm/createTamagui.mjs
+// ../../node_modules/.pnpm/tamagui@1.132.12_react-dom@_ef3dee22aa2afb98904e4a6a1fd885ca/node_modules/tamagui/dist/esm/createTamagui.mjs
 var import_core2 = require("@tamagui/core");
 var createTamagui = process.env.NODE_ENV !== "development" ? import_core2.createTamagui : (conf) => {
   const sizeTokenKeys = ["$true"], hasKeys = /* @__PURE__ */ __name((expectedKeys, obj) => expectedKeys.every((k) => typeof obj[k] < "u"), "hasKeys"), tamaguiConfig = (0, import_core2.createTamagui)(conf);
@@ -1754,7 +1754,6 @@ Expected a subset of: ${expected.join(", ")}
 // ../../packages/config/src/tamagui.config.ts
 var config = createTamagui({
   ...defaultConfig,
-  // themes: themesWithDisplayName,
   media: {
     xs: { maxWidth: 660 },
     gtXs: { minWidth: 660 + 1 },

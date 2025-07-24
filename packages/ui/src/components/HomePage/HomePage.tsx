@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { H1, View, XGroup, YStack, Button } from 'tamagui';
+import { H1, H2, View, XGroup, YStack, Button } from 'tamagui';
 import { useTranslation } from 'react-i18next';
+import { useGetMessageFromBE } from '@chatt/state';
 import LoginSheet from './LoginSheet/LoginSheet';
 
 export default function HomePage() {
   const { t } = useTranslation();
+  const { data, isSuccess } = useGetMessageFromBE();
 
   const [loginOpen, setLoginOpen] = useState<boolean>(false);
   return (
@@ -23,6 +25,7 @@ export default function HomePage() {
         </XGroup>
       </YStack>
       <LoginSheet open={loginOpen} onClose={() => setLoginOpen(false)} />
+      {isSuccess && <H2>{data}</H2>}
     </View>
   );
 }
