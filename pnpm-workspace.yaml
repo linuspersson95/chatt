@@ -4,8 +4,3 @@ packages:
 
 public-hoist-pattern:
   - react
-  - react-native
-  - react-native/*
-  - '@react-native/*'
-  - expo
-  - expo/*

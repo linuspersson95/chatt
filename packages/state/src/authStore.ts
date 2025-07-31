@@ -1,7 +1,5 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Platform } from 'react-native';
 
 type AuthStoreState = {
   user: string | null;
@@ -9,16 +7,12 @@ type AuthStoreState = {
   logout: () => void;
 };
 
-const storage =
-  Platform?.OS === 'web'
-    ? {
-        getItem: (name: string) => Promise.resolve(localStorage.getItem(name)),
-        setItem: (name: string, value: string) =>
-          Promise.resolve(localStorage.setItem(name, value)),
-        removeItem: (name: string) =>
-          Promise.resolve(localStorage.removeItem(name)),
-      }
-    : AsyncStorage;
+const storage = {
+  getItem: (name: string) => Promise.resolve(localStorage.getItem(name)),
+  setItem: (name: string, value: string) =>
+    Promise.resolve(localStorage.setItem(name, value)),
+  removeItem: (name: string) => Promise.resolve(localStorage.removeItem(name)),
+};
 
 export const useAuthStore = create<AuthStoreState>()(
   persist(
@@ -39,6 +33,6 @@ export const useAuthStore = create<AuthStoreState>()(
         },
         removeItem: async (key) => await storage.removeItem(key),
       },
-    }
-  )
+    },
+  ),
 );

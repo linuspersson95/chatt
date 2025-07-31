@@ -1,7 +1,6 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { tamaguiPlugin } from '@tamagui/vite-plugin';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
@@ -22,16 +21,7 @@ export default defineConfig(() => ({
     port: 3001,
     host: 'localhost',
   },
-  plugins: [
-    react(),
-    nxViteTsPaths(),
-    nxCopyAssetsPlugin(['*.md']),
-    tamaguiPlugin({
-      config: '@chatt/config/src/tamagui.config.ts',
-      components: ['tamagui'],
-      optimize: true,
-    }),
-  ],
+  plugins: [react(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   build: {
     outDir: '../../dist/frontend',
     emptyOutDir: true,
