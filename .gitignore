@@ -38,6 +38,7 @@ testem.log
 .DS_Store
 Thumbs.db
 apps/frontend/.env
+apps/frontend/env.d.ts
 
 .nx/cache
 .nx/workspace-data
