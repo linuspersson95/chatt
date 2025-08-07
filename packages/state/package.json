@@ -9,7 +9,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.14.0",
   "dependencies": {
     "@tanstack/react-query": "^5.83.0"
   }

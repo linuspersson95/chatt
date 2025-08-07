@@ -18,7 +18,12 @@
     "@fontsource/roboto": "^5.2.6",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
+    "@supabase/supabase-js": "^2.53.0",
     "add": "^2.0.6",
-    "pnpm": "^10.14.0"
+    "pnpm": "^10.14.0",
+    "react-world-flags": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/react-world-flags": "^1.6.0"
   }
 }
