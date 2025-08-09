@@ -6,7 +6,7 @@ import SpeedDial from './SpeedDial';
 import LanguageSelectorDialog from './LanguageSelector';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
-import { supabase } from '../../../supabase-client';
+import { supabase } from '../../supabase-client';
 import type { User } from '@supabase/supabase-js';
 
 const useUser = () => {

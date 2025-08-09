@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import { supabase } from '../../../supabase-client';
+import { supabase } from '../../supabase-client';
 
 export default function LogoutButton() {
   const handleLogout = async () => {
