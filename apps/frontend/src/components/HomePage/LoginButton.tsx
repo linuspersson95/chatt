@@ -5,6 +5,11 @@ export default function LoginButton() {
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
+      options: {
+        queryParams: {
+          prompt: 'select_account',
+        },
+      },
     });
 
     if (error) {
