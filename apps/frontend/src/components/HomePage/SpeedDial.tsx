@@ -7,7 +7,11 @@ import Language from '@mui/icons-material/Language';
 import LightMode from '@mui/icons-material/LightMode';
 import DarkMode from '@mui/icons-material/DarkMode';
 import LogOut from '@mui/icons-material/LogOut';
-import { useSettingStore, useDialogStore, useAuthStore } from '@chatt/state';
+import {
+  useSettingStore,
+  useDialogStore,
+  useAuthStore,
+} from '../../global-state';
 
 export default function BasicSpeedDial() {
   const { setThemeMode, themeMode } = useSettingStore((state) => state);

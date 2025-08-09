@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { useSettingStore } from '@chatt/state';
+import { useSettingStore } from '../global-state';
 import { getTheme } from '../theme';
 import HomePage from '../components/HomePage/HomePage';
 

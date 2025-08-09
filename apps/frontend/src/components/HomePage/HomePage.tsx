@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Typography, Container, Button, CircularProgress } from '@mui/material';
-import { useAuthStore, useGetMessageFromBE } from '@chatt/state';
+import { useAuthStore, useGetMessageFromBE } from '../../global-state';
 import { useTranslation } from 'react-i18next';
 import SpeedDial from './SpeedDial';
 import LanguageSelectorDialog from './LanguageSelector';

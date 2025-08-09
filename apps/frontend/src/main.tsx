@@ -1,6 +1,6 @@
 import { StrictMode, useMemo } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { QueryProvider } from '@chatt/state';
+import { QueryProvider } from './global-state';
 import App from './app/app';
 import './translation';
 

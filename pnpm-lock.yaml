@@ -26,9 +26,6 @@ importers:
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
-      zustand:
-        specifier: ^5.0.7
-        version: 5.0.7(@types/react@19.1.9)(react@19.1.1)
     devDependencies:
       '@babel/runtime':
         specifier: ~7.28.2
@@ -194,9 +191,6 @@ importers:
 
   apps/frontend:
     dependencies:
-      '@chatt/state':
-        specifier: workspace:*
-        version: link:../../packages/state
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.1.9)(react@19.1.1)
@@ -212,6 +206,9 @@ importers:
       '@mui/material':
         specifier: ^7.2.0
         version: 7.2.0(@emotion/react@11.14.0(@types/react@19.1.9)(react@19.1.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.1.9)(react@19.1.1))(@types/react@19.1.9)(react@19.1.1))(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@tanstack/react-query':
+        specifier: ^5.83.0
+        version: 5.83.0(react@19.1.1)
       i18next:
         specifier: ^25.3.1
         version: 25.3.1(typescript@5.9.2)
@@ -224,6 +221,9 @@ importers:
       react-world-flags:
         specifier: ^1.6.0
         version: 1.6.0(react@19.1.1)
+      zustand:
+        specifier: ^5.0.7
+        version: 5.0.7(@types/react@19.1.9)(react@19.1.1)
     devDependencies:
       '@types/react-world-flags':
         specifier: ^1.6.0
@@ -243,12 +243,6 @@ importers:
       typescript-eslint:
         specifier: ^8.38.0
         version: 8.38.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2)
-
-  packages/state:
-    dependencies:
-      '@tanstack/react-query':
-        specifier: ^5.83.0
-        version: 5.83.0(react@19.1.1)
 
 packages:
 
