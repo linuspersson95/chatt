@@ -23,9 +23,6 @@ importers:
       react-dom:
         specifier: 19.1.1
         version: 19.1.1(react@19.1.1)
-      react-i18next:
-        specifier: ^15.6.1
-        version: 15.6.1(i18next@25.3.1(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -200,9 +197,6 @@ importers:
       '@chatt/state':
         specifier: workspace:*
         version: link:../../packages/state
-      '@chatt/translation':
-        specifier: workspace:*
-        version: link:../../packages/translation
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.1.9)(react@19.1.1)
@@ -218,6 +212,15 @@ importers:
       '@mui/material':
         specifier: ^7.2.0
         version: 7.2.0(@emotion/react@11.14.0(@types/react@19.1.9)(react@19.1.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.1.9)(react@19.1.1))(@types/react@19.1.9)(react@19.1.1))(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      i18next:
+        specifier: ^25.3.1
+        version: 25.3.1(typescript@5.9.2)
+      i18next-browser-languagedetector:
+        specifier: ^8.2.0
+        version: 8.2.0
+      react-i18next:
+        specifier: ^15.6.1
+        version: 15.6.1(i18next@25.3.1(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
       react-world-flags:
         specifier: ^1.6.0
         version: 1.6.0(react@19.1.1)
@@ -246,15 +249,6 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.83.0
         version: 5.83.0(react@19.1.1)
-
-  packages/translation:
-    dependencies:
-      i18next:
-        specifier: ^25.3.1
-        version: 25.3.1(typescript@5.9.2)
-      i18next-browser-languagedetector:
-        specifier: ^8.2.0
-        version: 8.2.0
 
 packages:
 

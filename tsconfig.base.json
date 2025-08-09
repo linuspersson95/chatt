@@ -9,7 +9,6 @@
     "baseUrl": ".",
     "paths": {
       "@chatt/state": ["packages/state/src/index.ts"],
-      "@chatt/translation": ["packages/translation/src/index.ts"],
       "@chatt/types": ["packages/types/src/index.ts"],
       "@chatt/utils": ["packages/utils/src/index.ts"]
     }
