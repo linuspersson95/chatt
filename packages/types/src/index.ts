@@ -1,1 +1,1 @@
-export * from './lib/types';
+export type ThemeMode = 'light' | 'dark';

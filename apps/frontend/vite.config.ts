@@ -35,6 +35,7 @@ export default defineConfig(() => ({
       '@frontend/state': path.resolve(__dirname, './src/global-state'),
       '@frontend/supabase': path.resolve(__dirname, './src/supabase-client.ts'),
       '@frontend/components': path.resolve(__dirname, './src/components'),
+      '@frontend/types': path.resolve(__dirname, './src/types.ts'),
     },
   },
   build: {

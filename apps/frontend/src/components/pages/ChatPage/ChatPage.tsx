@@ -1,9 +1,10 @@
-import { Typography } from '@mui/material';
+import { Grid } from '@mui/material';
+import Bar from './Bar';
 
 export default function ChatPage() {
   return (
-    <Typography variant="h1" component="h1">
-      Detta är chatsidan :)
-    </Typography>
+    <Grid container>
+      <Bar />
+    </Grid>
   );
 }

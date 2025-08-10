@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Dialog,
   DialogActions,
@@ -6,26 +5,25 @@ import {
   DialogContentText,
   DialogTitle,
   Button,
-  FormControl,
-  InputLabel,
-  Select,
-  OutlinedInput,
-  MenuItem,
-  SelectChangeEvent,
+  Stack,
+  Chip,
 } from '@mui/material';
 import Flag from 'react-world-flags';
 import { useTranslation } from 'react-i18next';
 import { useDialogStore } from '@frontend/state';
 
 type Languages = {
-  languageCode: string;
-  language: string;
-  flagCode: 'SE' | 'GB';
+  languageCode: 'sv' | 'en' | 'es' | 'tr' | 'hi';
+  language: 'Svenska' | 'English' | 'Español' | 'Türkçe' | 'हिंदी';
+  flagCode: 'SE' | 'GB' | 'ES' | 'TR' | 'IN';
 };
 
 const languages: Languages[] = [
-  { languageCode: 'sv', language: 'svenska', flagCode: 'SE' },
-  { languageCode: 'en', language: 'engelska', flagCode: 'GB' },
+  { languageCode: 'sv', language: 'Svenska', flagCode: 'SE' },
+  { languageCode: 'en', language: 'English', flagCode: 'GB' },
+  { languageCode: 'es', language: 'Español', flagCode: 'ES' },
+  { languageCode: 'tr', language: 'Türkçe', flagCode: 'TR' },
+  { languageCode: 'hi', language: 'हिंदी', flagCode: 'IN' },
 ];
 
 export default function LanguageSelectorDialog() {
@@ -33,19 +31,6 @@ export default function LanguageSelectorDialog() {
   const closeDialog = useDialogStore((state) => state.setDialogClose);
 
   const { i18n } = useTranslation();
-
-  const [newLanguage, setNewLanguage] = useState<string>(i18n.language);
-
-  const handleChange = (event: SelectChangeEvent<string>) => {
-    setNewLanguage(event.target.value);
-  };
-
-  const handleSubmit = () => {
-    if (newLanguage !== i18n.language) {
-      i18n.changeLanguage(newLanguage);
-    }
-    closeDialog('languageSelector');
-  };
 
   return (
     <Dialog
@@ -60,37 +45,21 @@ export default function LanguageSelectorDialog() {
           Här kan du välja vilket språk du vill att sidan och chattarna ska vara
           på
         </DialogContentText>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="language-selector-dialog-select-label">
-            Språk
-          </InputLabel>
-          <Select
-            labelId="language-selector-dialog-select-label"
-            id="language-selector-dialog-select"
-            value={newLanguage}
-            onChange={handleChange}
-            input={<OutlinedInput label="Språk" />}
-          >
-            {languages.map((languageItem) => (
-              <MenuItem
-                key={languageItem.languageCode}
-                value={languageItem.languageCode}
-              >
-                {languageItem.language}
-                <Flag
-                  size={32}
-                  code={languageItem.flagCode}
-                  style={{ marginRight: 8 }}
-                />
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <Stack direction="row" spacing={1} mt={1}>
+          {languages.map(({ flagCode, language, languageCode }) => (
+            <Chip
+              sx={{ p: 0.5 }}
+              key={languageCode}
+              icon={<Flag code={flagCode} height={16} alt={`${flagCode}`} />}
+              label={language}
+              variant={languageCode === i18n.language ? 'filled' : 'outlined'}
+              clickable={languageCode !== i18n.language}
+              onClick={() => i18n.changeLanguage(languageCode)}
+            />
+          ))}
+        </Stack>
         <DialogActions>
-          <Button onClick={() => closeDialog('languageSelector')}>
-            Avbryt
-          </Button>
-          <Button onClick={handleSubmit}>Ok</Button>
+          <Button onClick={() => closeDialog('languageSelector')}>Stäng</Button>
         </DialogActions>
       </DialogContent>
     </Dialog>

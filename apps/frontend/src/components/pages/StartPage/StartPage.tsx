@@ -11,15 +11,11 @@ export default function StartPage() {
 
   // const { isLoading, data, isSuccess, refetch } = useGetMessageFromBE();
 
-  useEffect(() => {
-    console.log('inloggad användare: ', user);
-  }, [user]);
-
   return (
     <Grid container>
       <Grid size={12}>
         <Typography component="h1" variant="h1">
-          {t('welcome')}
+          {t('startPage.welcome')}
         </Typography>
       </Grid>
       <Grid size={12}>

@@ -1,14 +1,17 @@
 import { useMemo } from 'react';
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SettingsIcon from '@mui/icons-material/Settings';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import Language from '@mui/icons-material/Language';
 import LightMode from '@mui/icons-material/LightMode';
 import DarkMode from '@mui/icons-material/DarkMode';
 import LogOut from '@mui/icons-material/LogOut';
-import { useSettingStore, useDialogStore } from '@frontend/state';
-import { useUser } from '@frontend/state';
+import { useSettingStore, useDialogStore, useUser } from '@frontend/state';
+import type { ThemeMode } from '@frontend/types';
+
+const getOppositeThemeMode = (currentTheme: ThemeMode): ThemeMode =>
+  currentTheme === 'light' ? 'dark' : 'light';
 
 export default function BasicSpeedDial() {
   const { setThemeMode, themeMode } = useSettingStore((state) => state);
@@ -17,7 +20,8 @@ export default function BasicSpeedDial() {
 
   type Action = {
     icon: React.ReactNode;
-    name: string;
+    id: string;
+    tooltip: string;
     onClick: () => void;
   };
 
@@ -25,18 +29,21 @@ export default function BasicSpeedDial() {
     () =>
       [
         {
-          icon: themeMode === 'light' ? <LightMode /> : <DarkMode />,
-          name: 'Theme',
-          onClick: () => setThemeMode(themeMode === 'light' ? 'dark' : 'light'),
+          icon: themeMode === 'light' ? <DarkMode /> : <LightMode />,
+          id: 'action-id-1',
+          tooltip: `Change theme to ${getOppositeThemeMode(themeMode)}-mode`,
+          onClick: () => setThemeMode(getOppositeThemeMode(themeMode)),
         },
         {
           icon: <Language />,
-          name: 'Language',
+          id: 'action-id-2',
+          tooltip: 'Change language',
           onClick: () => setDialogOpen('languageSelector'),
         },
         isLoggedIn && {
           icon: <LogOut />,
-          name: 'Log out',
+          id: 'action-id-3',
+          tooltip: 'Logout',
           onClick: logout,
         },
       ].filter(Boolean) as Action[],
@@ -48,13 +55,13 @@ export default function BasicSpeedDial() {
       <SpeedDial
         ariaLabel="Change your language or theme settings"
         sx={{ position: 'absolute', bottom: 16, right: 16 }}
-        icon={<SpeedDialIcon />}
+        icon={<SettingsIcon />}
       >
         {actions.map((action) => (
           <SpeedDialAction
-            key={action.name}
+            key={action.id}
             icon={action.icon}
-            slotProps={{ tooltip: { title: action.name } }}
+            slotProps={{ tooltip: { title: action.tooltip } }}
             onClick={action.onClick}
           />
         ))}

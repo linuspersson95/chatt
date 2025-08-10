@@ -1,8 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import type { ThemeMode } from '@frontend/types';
 import { setUpStorage } from './setupStorage';
-
-type ThemeMode = 'light' | 'dark';
 
 type SettingStoreState = {
   themeMode: ThemeMode;

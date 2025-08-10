@@ -18,7 +18,8 @@
       "@frontend/translation": ["src/translation/index.ts"],
       "@frontend/state": ["src/global-state/index.ts"],
       "@frontend/supabase": ["src/supabase-client.ts"],
-      "@frontend/components": ["src/components/index.ts"]
+      "@frontend/components": ["src/components/index.ts"],
+      "@frontend/types": ["src/types.ts"]
     }
   },
   "include": ["src"],
