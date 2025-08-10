@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import Flag from 'react-world-flags';
 import { useTranslation } from 'react-i18next';
-import { useDialogStore } from '../../global-state';
+import { useDialogStore } from '@frontend/state';
 
 type Languages = {
   languageCode: string;

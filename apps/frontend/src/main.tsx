@@ -1,17 +1,17 @@
-import { StrictMode, useMemo } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { QueryProvider } from './global-state';
-import App from './app/app';
-import './translation';
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+
+import { routeTree } from './routeTree.gen';
+const router = createRouter({ routeTree });
+
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
-root.render(
-  <StrictMode>
-    <QueryProvider>
-      <App />
-    </QueryProvider>
-  </StrictMode>,
-);
+root.render(<RouterProvider router={router} />);

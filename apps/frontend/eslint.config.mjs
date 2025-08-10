@@ -1,14 +1,15 @@
 import nx from '@nx/eslint-plugin';
 import baseConfig from '../../eslint.config.mjs';
-import tseslint from 'typescript-eslint';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   ...baseConfig,
   ...nx.configs['flat/react'],
+  {
+    ignores: ['routeTree.gen.ts'],
+  },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     languageOptions: {

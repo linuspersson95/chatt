@@ -3,6 +3,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
+import { tanstackRouter } from '@tanstack/router-plugin/vite';
+import path from 'path';
 
 export default defineConfig(() => ({
   root: __dirname,
@@ -21,7 +23,20 @@ export default defineConfig(() => ({
     port: 3001,
     host: 'localhost',
   },
-  plugins: [react(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
+  plugins: [
+    tanstackRouter({ target: 'react', autoCodeSplitting: true }),
+    react(),
+    nxViteTsPaths(),
+    nxCopyAssetsPlugin(['*.md']),
+  ],
+  resolve: {
+    alias: {
+      '@frontend/translation': path.resolve(__dirname, './src/translation'),
+      '@frontend/state': path.resolve(__dirname, './src/global-state'),
+      '@frontend/supabase': path.resolve(__dirname, './src/supabase-client.ts'),
+      '@frontend/components': path.resolve(__dirname, './src/components'),
+    },
+  },
   build: {
     outDir: '../../dist/frontend',
     emptyOutDir: true,

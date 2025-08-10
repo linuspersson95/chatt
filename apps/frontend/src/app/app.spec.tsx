@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-
 import App from './app';
 
 describe('App', () => {
@@ -11,7 +10,7 @@ describe('App', () => {
   it('should have a greeting as the title', () => {
     const { getAllByText } = render(<App />);
     expect(
-      getAllByText(new RegExp('Welcome frontend', 'gi')).length > 0
+      getAllByText(new RegExp('Welcome frontend', 'gi')).length > 0,
     ).toBeTruthy();
   });
 });

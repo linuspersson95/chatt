@@ -1,9 +1,13 @@
 import nx from '@nx/eslint-plugin';
+import tseslint from 'typescript-eslint';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
+  ...tseslint.configs.recommended,
+  eslintConfigPrettier,
   {
     ignores: [
       '**/dist',

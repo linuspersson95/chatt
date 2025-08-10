@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from 'react';
+import { useMemo } from 'react';
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
@@ -7,16 +7,13 @@ import Language from '@mui/icons-material/Language';
 import LightMode from '@mui/icons-material/LightMode';
 import DarkMode from '@mui/icons-material/DarkMode';
 import LogOut from '@mui/icons-material/LogOut';
-import {
-  useSettingStore,
-  useDialogStore,
-  useAuthStore,
-} from '../../global-state';
+import { useSettingStore, useDialogStore } from '@frontend/state';
+import { useUser } from '@frontend/state';
 
 export default function BasicSpeedDial() {
   const { setThemeMode, themeMode } = useSettingStore((state) => state);
   const { setDialogOpen } = useDialogStore((state) => state);
-  const { user, logout } = useAuthStore((state) => state);
+  const { isLoggedIn, logout } = useUser();
 
   type Action = {
     icon: React.ReactNode;
@@ -37,13 +34,13 @@ export default function BasicSpeedDial() {
           name: 'Language',
           onClick: () => setDialogOpen('languageSelector'),
         },
-        user !== null && {
+        isLoggedIn && {
           icon: <LogOut />,
           name: 'Log out',
           onClick: logout,
         },
       ].filter(Boolean) as Action[],
-    [themeMode, user],
+    [themeMode, isLoggedIn],
   );
 
   return (

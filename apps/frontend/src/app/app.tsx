@@ -1,17 +1,29 @@
-import { useMemo } from 'react';
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { useSettingStore } from '../global-state';
+import { StrictMode, useMemo } from 'react';
+import { Outlet } from '@tanstack/react-router';
+import { CssBaseline, ThemeProvider, Container } from '@mui/material';
+import { useSettingStore } from '@frontend/state';
+import { QueryProvider } from '@frontend/state';
+import { Dialogs, SpeedDial } from '@frontend/components';
 import { getTheme } from '../theme';
-import HomePage from '../components/HomePage/HomePage';
+
+import '@frontend/translation';
 
 export default function App() {
   const themeMode = useSettingStore((state) => state.themeMode);
   const theme = useMemo(() => getTheme(themeMode), [themeMode]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <HomePage />
-    </ThemeProvider>
+    <StrictMode>
+      <QueryProvider>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Container sx={{ minHeight: '100vh' }}>
+            <Outlet />
+            <SpeedDial />
+            <Dialogs />
+          </Container>
+        </ThemeProvider>
+      </QueryProvider>
+    </StrictMode>
   );
 }

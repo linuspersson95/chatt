@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import { supabase } from '../../supabase-client';
+import { supabase } from '@frontend/supabase';
 
 export default function LoginButton() {
   const handleLogin = async () => {

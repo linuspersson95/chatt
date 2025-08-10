@@ -7,12 +7,19 @@
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "types": ["vite/client", "vitest"]
+    "types": ["vite/client", "vitest"],
+    "baseUrl": ".",
+    "paths": {
+      "@frontend/translation": ["src/translation/index.ts"],
+      "@frontend/state": ["src/global-state/index.ts"],
+      "@frontend/supabase": ["src/supabase-client.ts"],
+      "@frontend/components": ["src/components/index.ts"]
+    }
   },
   "include": ["src"],
   "references": [
