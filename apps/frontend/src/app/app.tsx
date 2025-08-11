@@ -2,7 +2,7 @@ import { StrictMode, useMemo } from 'react';
 import { Outlet } from '@tanstack/react-router';
 import { CssBaseline, ThemeProvider, Container } from '@mui/material';
 import { useSettingStore } from '@frontend/state';
-import { QueryProvider } from '@frontend/state';
+import { QueryProvider } from '@frontend/api';
 import { Dialogs, SpeedDial } from '@frontend/components';
 import { getTheme } from '../theme';
 

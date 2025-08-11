@@ -7,7 +7,11 @@ export const sv: TranslationSchema = {
       login: 'Logga in',
       createAccount: 'Skapa konto',
     },
-
+    languageDialog: {
+      title: 'Välj språk',
+      description:
+        'Här väljer du vilket språk du vill hemsidan samt chattarna ska vara på',
+    },
     close: 'Stäng',
   },
 };

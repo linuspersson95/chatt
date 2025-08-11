@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Typography, Grid } from '@mui/material';
-import { useGetMessageFromBE, useUser } from '@frontend/state';
+import { useUser } from '@frontend/state';
 import { useTranslation } from 'react-i18next';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
@@ -8,8 +8,6 @@ import LogoutButton from './LogoutButton';
 export default function StartPage() {
   const { t } = useTranslation();
   const { user, isLoggedIn } = useUser();
-
-  // const { isLoading, data, isSuccess, refetch } = useGetMessageFromBE();
 
   return (
     <Grid container>

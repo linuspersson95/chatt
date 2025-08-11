@@ -36,6 +36,7 @@ export default defineConfig(() => ({
       '@frontend/supabase': path.resolve(__dirname, './src/supabase-client.ts'),
       '@frontend/components': path.resolve(__dirname, './src/components'),
       '@frontend/types': path.resolve(__dirname, './src/types.ts'),
+      '@frontend/api': path.resolve(__dirname, './src/api'),
     },
   },
   build: {

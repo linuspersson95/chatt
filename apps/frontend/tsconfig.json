@@ -19,7 +19,8 @@
       "@frontend/state": ["src/global-state/index.ts"],
       "@frontend/supabase": ["src/supabase-client.ts"],
       "@frontend/components": ["src/components/index.ts"],
-      "@frontend/types": ["src/types.ts"]
+      "@frontend/types": ["src/types.ts"],
+      "@frontend/api": ["src/api/index.ts"]
     }
   },
   "include": ["src"],

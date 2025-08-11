@@ -11,9 +11,10 @@ import {
 import Flag from 'react-world-flags';
 import { useTranslation } from 'react-i18next';
 import { useDialogStore } from '@frontend/state';
+import type { SupportedLanguages } from '@chatt/types';
 
 type Languages = {
-  languageCode: 'sv' | 'en' | 'es' | 'tr' | 'hi';
+  languageCode: SupportedLanguages;
   language: 'Svenska' | 'English' | 'Español' | 'Türkçe' | 'हिंदी';
   flagCode: 'SE' | 'GB' | 'ES' | 'TR' | 'IN';
 };
@@ -30,7 +31,7 @@ export default function LanguageSelectorDialog() {
   const isOpen = useDialogStore((state) => state.dialog.languageSelector);
   const closeDialog = useDialogStore((state) => state.setDialogClose);
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   return (
     <Dialog
@@ -39,11 +40,12 @@ export default function LanguageSelectorDialog() {
       aria-labelledby="language-selector-dialog-title"
       aria-describedby="language-selector-dialog-description"
     >
-      <DialogTitle id="language-selector-dialog-title">Välj språk</DialogTitle>
+      <DialogTitle id="language-selector-dialog-title">
+        {t('languageDialog.title')}
+      </DialogTitle>
       <DialogContent>
         <DialogContentText id="language-selector-dialog-description">
-          Här kan du välja vilket språk du vill att sidan och chattarna ska vara
-          på
+          {t('languageDialog.description')}
         </DialogContentText>
         <Stack direction="row" spacing={1} mt={1}>
           {languages.map(({ flagCode, language, languageCode }) => (
